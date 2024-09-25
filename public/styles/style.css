@@ -1,0 +1,160 @@
+
+
+body{
+    margin-top: 0;
+    background-color: rgb(16, 14, 14) ;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-input:focus {
+    width: 350px;
+    border-color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.search-button {
+    width: 30px;
+    height: 30px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.search-input:focus + .search-button {
+    background-color: #0056b3;
+    animation: pulse 1s infinite;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*FIRST-DIV*/
+
+.container { 
+    padding: 1rem;
+    height: 50vh;
+    width: 100%;
+    background-color : rgb(57, 25, 217);
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+
+}
+
+.icon{ display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
+
+    
+}
+ .weather-Icon{ width: 100px;
+    height: 100px;
+
+ }
+
+.temperature{ display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+ }
+
+
+/* CITY DIV OF THE WEATHER LOCATION */
+
+/*SECOND SECTION*/
+.weather-params{ padding: 2rem;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+
+   
+}
+
+.box{  margin-top: 100px;
+    padding: 1rem;
+    width: 33.3%;
+    border-radius: 10%;
+    background-color: white;
+    margin-left: 10px;
+    box-shadow: rgb(37, 36, 35);
+    
+}
+
+.cool-face{
+    width: 30px;
+    height: 30px;
+    text-shadow: black;
+    border: black;
+}
+
+
+
+/*HTML TAGS */
+
+h1 {
+    color: white;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+    padding: 1rem;
+    font-family: "McLaren",  cursive;
+
+}
+h2{ 
+    font-size: clamp(3rem , 2vw , 3rem);
+    color:  rgb(255, 255, 255);
+font-family: "McLaren",  serif;
+    font-weight: 700;
+    text-align: center;
+   padding: 2rem , 4rem;
+   margin: auto;
+   text-shadow: black;
+}
+
+
+
+p{    font-style: normal;
+    font-size: 1.5em;
+    padding: 1rem;
+color:  rgb(57, 25, 217);
+font-family: "Bree Serif", serif;
+font-weight: 800;
+   background-color: white;
+text-shadow: black;
+text-wrap: balance;}
+
+   p:hover{
+    lighting-color: white ;
+   }
+
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--GOOGLE FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=McLaren|Montserrat&display=swap"
+  rel="stylesheet"/>
+
+  <!-- PUBLIC LINK (CSS)-->
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Weather App</title>
+  
+<!-- JQUERY LINK-->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+  <!--- type in animation-->
+  <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+</head>
+
+
+<body>
+  
+  <!-- FIRST SECTION-->
+<div class="container"> 
+  <form class="search-container" action="/submit" method="post">
+    <input type="text" name="city" class="search-input" placeholder="check the weather...">
+    <button class="search-button" type="submit"> </button>
+</form>
+
+<%if (locals.data) %>
+
+
+<!-- Temperature and Temperature Icon Display-->
+
+<% if(locals.icon) {%>
+  <div class="icon"> <img src="images/<%=icon %>.png" class="weather-Icon" > </div>
+<%} %>
+
+         <%if(locals.temp) { %>
+  <div class="temperature">  
+    <h1> <%=temp  %> °C </h1>
+  </div>
+  <%  } else { %>
+    <h1> !°C </h1>
+        <% } %>
+
+        <!-- City Name-->
+     <% if(locals.name) { %>
+  <div class="weather-country">
+<h2> <%=name  %> </h2> 
+<% } else { %>
+<h2></h2>
+<% } %>
+    </div>
+</div>
+    
+
+<!-- OTHER WEATHER  INF0RMATION-->
+    <div class="weather-params">  
+    <%if (locals.feels_like) { %> 
+    <div class="box"> <p> Feels_like <%= feels_like %> °C  <img src="images/<%=icon %>.png" class="cool-face"  </p> 
+  
+    </div>
+
+    <% if  ( locals.humidity) %>
+    <div class="box">  <p> Humidity <%= humidity %>   g/kg </p></div>
+    
+  <% if ( locals.description)%>
+    <div class="box"> <p> <%=description %>  <img src="images/<%=icon %>.png" class="cool-face" ></p>
+     
+    </div>
+    
+    </div>
+  <%  } else { %>
+<p> Cloudy with a chance of meatballs  <img  class="cool-face" src="images/cool.png" alt="emoji"> </p>
+        <% } %>
+        
+
+
+        <script>
+
+          // JQUERY ANIMATIONS ON THE CITY NAME AND OTHER WEATHER INFORMATION 
+          $(document).ready(function() {
+  new TypeIt("h2", {
+    speed: 150,
+    loop: false,
+    breakLines: true,
+  }).go()
+});
+
+
+
+         </script> 
+</body>
+
+</html>
